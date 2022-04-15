@@ -14,11 +14,13 @@ public class Main{
 //		StringTokenizer st;
 		
 		int n = Integer.parseInt(br.readLine());
-		
 		for(int i=1; i<=n; i++) {
-			for(int j=1; j<=i; j++) {
-				pw.write("*");
+			for(int t=n-1; t>=i; t--) {
+				pw.write(" ");
 			}
+			for(int j=1; j<=i; j++) {				
+				pw.write("*");				
+			}			
 			pw.write("\n");
 		}
 		
