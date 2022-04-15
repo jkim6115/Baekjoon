@@ -2,31 +2,33 @@ package Package1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-//import java.util.StringTokenizer;
+import java.util.StringTokenizer;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class Main{
 	public static void main(String[] args) throws IOException{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		PrintWriter pw = new PrintWriter(System.out);
-//		StringTokenizer st;
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringTokenizer st1 = new StringTokenizer(br.readLine());
 		
-		int n = Integer.parseInt(br.readLine());
-		for(int i=1; i<=n; i++) {
-			for(int t=n-1; t>=i; t--) {
-				pw.write(" ");
-			}
-			for(int j=1; j<=i; j++) {				
-				pw.write("*");				
-			}			
-			pw.write("\n");
+		int N = Integer.parseInt(st.nextToken());
+		int X = Integer.parseInt(st.nextToken());
+		int arr[] = new int[N];
+		
+		for(int i=0; i<arr.length; i++) {
+			arr[i]=Integer.parseInt(st1.nextToken());
 		}
+		arr(X, arr);
 		
-		br.close();
-		pw.flush();
-		pw.close();
-		
+		br.close();		
+	}
+	
+	private static void arr(int X, int arr[]) {
+		for(int i=0; i<=arr.length-1; i++) {
+			if(arr[i]<X) {
+				System.out.println(arr[i]);
+			}
+		}
 	}
 }
